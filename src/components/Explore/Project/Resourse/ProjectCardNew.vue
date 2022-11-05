@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import TeamCircular from '@/components/Resourse/StylesObj/TeamCircular.vue'
+import TeamCircular from '../../Blocks/TeamCircular.vue'
 import BtnEditDelete from '@/components/Resourse/blocks/BtnEditDelete.vue'
 
 export default {

@@ -9,34 +9,64 @@
             <img v-else :src="'https://pp.ftf.tsu.ru/' + this.User.memberProjects[0].photo[0].link"
                 class="cover max-h-[600px] w-screen" alt="..." />
         </div> -->
-        <img  src="@/assets/img/curved-images/curved14.jpg" class="w-full  h-[200px] relative flex items-center overflow-hidden rounded-2xl  bg-center p-0"/>
-                                            <!-- <img v-if="User?.photo !=undefined" alt="..." :src="'https://pp.ftf.tsu.ru/'+User.photo?.link" class="-mt-20 ml-40 shadow-xl rounded-full object-cover h-40 w-40 align-middle border border-4 border-white " data-v-47b4b219=""> -->
+        <div class="w-full  h-[250px] relative flex items-center overflow-hidden rounded-2xl  bg-center p-0">
+            <div
+                class="absolute inset-y-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-purple-700 to-pink-500 opacity-60">
+            </div>
+            <img class="w-full h-full overflow-hidden bg-cover" src="@/assets/img/curved-images/curved0.jpg" />
+        </div>
 
         <section class="max-h-[200px] w-10/12 mx-auto mb-10" v-if="true">
             <div
                 class="relative flex flex-col flex-auto min-w-0 p-4 mx-6 -mt-16 overflow-hidden break-words border-0 shadow-xl dark:shadow-soft-dark-xl dark:bg-gray-950 rounded-2xl bg-white/80 bg-clip-border backdrop-blur-2xl backdrop-saturate-200">
-                <div class="flex flex-wrap -mx-3">
-                    <div class="flex-none w-auto max-w-full px-3">
-                        <div
-                            class="text-base ease-soft-in-out h-16 w-16 relative inline-flex items-center justify-center rounded-xl text-white transition-all duration-200">
-                            <img  v-if="User?.photo !=undefined" alt="..." :src="'https://pp.ftf.tsu.ru/'+User.photo?.link" 
-                                class="w-full shadow-soft-sm rounded-xl">
-                            <img v-else src="../../../assets/img/bruce-mars.jpg" alt="profile_image"
-                                class="w-full shadow-soft-sm rounded-xl">
-
+                <div class="flex flex-wrap justify-between -mx-3">
+                    <div class="flex">
+                        <div class="w-auto max-w-full px-3">
+                            <div
+                                class="text-base ease-soft-in-out h-16 w-16 relative inline-flex items-center justify-center rounded-xl text-white transition-all duration-200">
+                                <img v-if="User?.photo != undefined" alt="..."
+                                    :src="'https://pp.ftf.tsu.ru/' + User.photo?.link"
+                                    class="w-full shadow-soft-sm rounded-xl">
+                                <img v-else src="../../../assets/img/bruce-mars.jpg" alt="profile_image"
+                                    class="w-full shadow-soft-sm rounded-xl">
+    
+                            </div>
+                        </div>
+                        <div class="flex-none w-auto max-w-full px-3 my-auto">
+                            <div class="h-full">
+                                <h5 class="mb-1 dark:text-white">{{ User.firstName + ' ' + User.lastName + ' ' +
+                                        User.middleName
+                                }}</h5>
+                                <p class="mb-0 font-semibold leading-normal text-sm dark:text-white dark:opacity-60">
+                                    {{ User.role?.name }}</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex-none w-auto max-w-full px-3 my-auto">
-                        <div class="h-full">
-                            <h5 class="mb-1 dark:text-white">{{User.firstName +' ' + User.lastName + ' ' + User.middleName}}</h5>
-                            <p class="mb-0 font-semibold leading-normal text-sm dark:text-white dark:opacity-60">
-                                {{User.role?.name}}</p>
+                    <div  class="flex mr-4 hidden">
+                        <div class="text-center w-auto max-w-full px-3 my-auto">
+                            <div class="h-full">
+                                    <div class="  rounded-lg">
+                                        <h2 class="title-font font-medium text-2xl text-gray-900">{{User.memberProjects?.length}}</h2>
+                                        <p class="leading-relaxed">Проекты</p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="text-center w-auto max-w-full px-3 my-auto">
+                            <div class="h-full">
+                                    <div class="  rounded-lg">
+                                        <h2 class="title-font font-medium text-2xl text-gray-900">{{User.publications?.length}}</h2>
+                                        <p class="leading-relaxed">Публикации</p>
+                                    </div>
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </div>
         </section>
+
+
+
         <section v-if="false" class="relative">
 
             <div class=" mx-auto">

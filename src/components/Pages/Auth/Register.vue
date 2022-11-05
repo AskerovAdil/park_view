@@ -300,7 +300,7 @@
 
 <script>
 import FormPhotoMixins from '@/components/mixins/FormPhoto.js'
-
+import "@/assets/js/"
     export default {
         mixins:[FormPhotoMixins],
         data(){

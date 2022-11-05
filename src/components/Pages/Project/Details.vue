@@ -115,7 +115,7 @@
 <script>
 import PublicationList from '@/components/Resourse/blocks/PublicationList.vue'
 import TeamList from '@/components/Resourse/blocks/TeamList.vue'
-import TeamListNew from '@/components/Resourse/blocks/TeamListNew.vue'
+import TeamListNew from '@/components/Explore/Project/Resourse/TeamListNew.vue'
 import PaginationMixin from '@/components/mixins/Pagination'
 import Gallery from './Resourse/Gallery.vue'
 import GalleryNew from './Resourse/GalleryNew.vue'
