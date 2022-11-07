@@ -1,8 +1,6 @@
 <template>
-    <section class="bg-black h-[700px] overflow-hidden rounded-b-3xl">
-
-        <img class="bg-cover bg-center bg-no-repeat rounded-b-3xl overflow-hidden bg-black opacity-30"
-            src="@/assets/img/1645229153_8-phonoteka-org-p-anime-fon-nebo-noch-9.png" alt="">
+    <section class="bg-black shadow-2xl h-[700px] overflow-hidden rounded-b-3xl">
+        <img class="hbg-cover bg-center bg-no-repeat rounded-b-3xl overflow-hidden" src="@/assets/img/main.png" alt="">
         <div class="absolute  top-20 p-8 md:p-12 lg:px-16 lg:py-24">
             <div class="max-w-lg text-center sm:text-left">
                 <h2 class="text-2xl font-bold text-white sm:text-3xl md:text-5xl">
@@ -33,9 +31,11 @@
 
 
     </section>
-
-    <users-list :Users="this.Users" />
+    <project-list />
+    <news-list/>
+    <users-list />
     <feed-back class="mt-10" />
+
 
     Путь Пользователя
     Примеры проектов
@@ -43,6 +43,13 @@
 
     Ближайшие мероприятия
     Новости
+
+
+    <p></p>
+
+    Добавить слайдер, (возможно, vue slick)
+    Представление на главной, ближайшие мероприятия
+
 
     <footer class="py-12">
         <div class="container mx-auto">
@@ -92,31 +99,21 @@
 
 <script>
 import UsersList from './Resourse/UsersList.vue';
+import NewsList from './Resourse/NewsList.vue';
+import ProjectList from './Resourse/ProjectList.vue';
 import FeedBack from './Resourse/FeedBack.vue';
+
+
 export default {
     components: {
-        UsersList, FeedBack
+        UsersList, FeedBack, NewsList,ProjectList
     },
     data() {
         return {
             Users: [],
         }
     },
-    async mounted() {
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
 
-        var requestOptions = {
-            method: 'GET',
-            headers: myHeaders,
-            redirect: 'follow'
-        };
-        var a = await fetch("https://pp.ftf.tsu.ru/api/Users", requestOptions)
-            .then(response => this.Users = response.json())
-            .then(x => this.Users = x)
-            .catch(error => console.log('error', error));
-        console.log(this.Users)
-    },
 }
 </script>
 
