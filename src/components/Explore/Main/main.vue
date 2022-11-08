@@ -31,24 +31,80 @@
 
 
     </section>
+
+    <section class="bg-white shadow-lg">
+        <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+            <div class="flex flex-col text-center w-full ">
+                <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">Статистика</h2>
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Информация за первый год работы</h1>
+         
+            </div>
+
+            <div class="mt-4 sm:mt-4">
+                <dl class="grid grid-cols-1 gap-4 sm:grid-cols-4">
+                    <div class="flex flex-col px-4 py-8 text-center">
+                        <img class="h-36 w-36 mx-auto pb-4" src="@/assets/img/ForPage/project.png" alt="">
+                        <dt class="order-last text-lg font-medium text-gray-500">
+                            Проекты
+                        </dt>
+
+                        <dd class="text-4xl font-bold text-blue-600 md:text-5xl">
+                            24
+                        </dd>
+                    </div>
+
+                    <div class="flex flex-col px-4 py-8 text-center">
+                        <img class="h-36 w-36 mx-auto pb-4" src="@/assets/img/ForPage/group.png" alt="">
+
+                        <dt class="order-last text-lg font-medium text-gray-500">
+                            Участники
+                        </dt>
+
+                        <dd class="text-4xl font-bold text-blue-600 md:text-5xl">127</dd>
+                    </div>
+
+                    <div class="flex flex-col px-4 py-8 text-center">
+                        <img class="h-36 w-36 mx-auto pb-4" src="@/assets/img/ForPage/result.png" alt="">
+
+                        <dt class="order-last text-lg font-medium text-gray-500">
+                            Публикации
+                        </dt>
+
+                        <dd class="text-4xl font-bold text-blue-600 md:text-5xl">12</dd>
+                    </div>
+                    
+                    <div class="flex flex-col px-4 py-8 text-center">
+                        <img class="h-36 w-36 mx-auto pb-4" src="@/assets/img/ForPage/events.png" alt="">
+
+                        <dt class="order-last text-lg font-medium text-gray-500">
+                            Мероприятия
+                        </dt>
+
+                        <dd class="text-4xl font-bold text-blue-600 md:text-5xl">4</dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </section>
+
     <project-list />
-    <news-list/>
+    <news-list class="bg-white shadow-lg" />
     <users-list />
-    <feed-back class="mt-10" />
+    <Reviews class="bg-white shadow-lg"/>
+    <FAQ />
+    <feed-back class="mt-10 bg-white shadow-lg" />
 
 
+<!-- 
     Путь Пользователя
     Примеры проектов
     Учатсники
 
     Ближайшие мероприятия
-    Новости
+    Новости -->
 
 
     <p></p>
-
-    Добавить слайдер, (возможно, vue slick)
-    Представление на главной, ближайшие мероприятия
 
 
     <footer class="py-12">
@@ -101,12 +157,19 @@
 import UsersList from './Resourse/UsersList.vue';
 import NewsList from './Resourse/NewsList.vue';
 import ProjectList from './Resourse/ProjectList.vue';
+import Reviews from './Resourse/Reviews.vue';
 import FeedBack from './Resourse/FeedBack.vue';
+import FAQ from './Resourse/FAQ.vue';
 
 
 export default {
     components: {
-        UsersList, FeedBack, NewsList,ProjectList
+        UsersList,
+        FeedBack,
+        NewsList,
+        ProjectList,
+        FAQ,
+        Reviews
     },
     data() {
         return {

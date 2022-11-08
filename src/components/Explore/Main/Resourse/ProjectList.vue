@@ -1,10 +1,11 @@
 <template>
+ 
     <div>
         <MainBlock :Name="'Проекты'">
             <div class="">
                 <swiper class="swiper grid grid-cols-3" :modules="modules" :space-between="30" :slides-per-view="3"
                     :pagination="{ clickable: true }">
-                    <swiper-slide  v-for="el in Projects" :key="el.id" class="slide">
+                    <swiper-slide v-for="el in Projects" :key="el.id" class="slide">
                         <project-card :Project="el" />
                     </swiper-slide>
                 </swiper>
@@ -50,5 +51,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+ 
 </style>

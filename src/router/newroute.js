@@ -2,8 +2,9 @@ import { createWebHistory, createRouter } from "vue-router";
 
 
 const routes = [
+
     {
-        path: "/Main",
+        path: "/index.html",
         name: "Main",
         component: () => import("@/components/Explore/Main/main.vue")
     },
@@ -27,6 +28,7 @@ const routes = [
     name: 'ProjectEdit',
     component: () => import('@/components/Explore/Project/Edit.vue')
 },
+
 
 
 
@@ -88,6 +90,7 @@ const routes = [
     name: "EditPublication",
     component: () => import('@/components/Explore/Publications/Edit.vue')
 },
+
 ];
 
 const router = createRouter({

@@ -1,15 +1,12 @@
 <template>
     <main-block :Name="'Участники'">
-        <div>
-            <div class="container mx-auto grid lg:grid-cols-3 md:grid-cols-2 gap-4 mt-12">
-                <swiper class="swiper grid grid-cols-3 mt-4 w-100 ">
-                    <swiper-slide v-for="el in Users" :key="el.id">
-                        <users-card :User="el" @Deleted="Deleted()">
+                <swiper class="swiper grid grid-cols-3" :modules="modules" :space-between="30" :slides-per-view="3"
+                    :pagination="{ clickable: true }">
+                    <swiper-slide  v-for="el in Users" :key="el.id" class="slide">
+                        <users-card class="pt-20" :User="el" @Deleted="Deleted()">
                         </users-card>
                     </swiper-slide>
                 </swiper>
-            </div>
-        </div>
     </main-block>
 </template>
 

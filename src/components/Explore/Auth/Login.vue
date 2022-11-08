@@ -139,7 +139,7 @@
                                 res => {
                                     localStorage.token = res.token
                                     localStorage.user = JSON.stringify(res) 
-                                    window.location.href = 'https://pp.ftf.tsu.ru/Users/Index';
+                                    window.location.href = 'https://pp.ftf.tsu.ru/';
                                     //this.$router.push("/Users/Index")
                                 }
                             )

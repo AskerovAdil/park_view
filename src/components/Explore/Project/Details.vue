@@ -1,8 +1,8 @@
 <template>
 
-  
+
     <div class="">
-        
+
         <section v-if="false"
             class="h-[500px] overflow-hidden bg-[url(https://images.unsplash.com/photo-1602810319428-019690571b5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover bg-center bg-no-repeat">
             <div class="max-h-[200px] w-10/12 mx-auto" v-if="true">
@@ -71,14 +71,22 @@
         <div v-if="true" class="pb-10">
             <!-- <img v-if="Project?.photos != undefined" :src="'https://pp.ftf.tsu.ru/' + Project.photos[0]?.link"
                 class="w-full object-cover h-[200px] relative flex items-center overflow-hidden rounded-2xl  bg-center p-0" /> -->
-            <carousel :Photos="Project.photos"/>
+            <carousel  />
+            <swiper class="swiper mx-auto z-0" :modules="modules" :space-between="30" :slides-per-view="1"
+                :pagination="{ clickable: true }">
+                <swiper-slide v-for="el in Project.photos" :key="el.id" class="slide">
+                    <div class="bg-black z-0">
+                        <img :src="'https://pp.ftf.tsu.ru/'+el.link" class="object-cover w-full h-[450px] opacity-70" alt="">
+                    </div>
+                </swiper-slide>
+            </swiper>
 
 
             <!-- <img v-if="User?.photo !=undefined" alt="..." :src="'https://pp.ftf.tsu.ru/'+User.photo?.link" class="-mt-20 ml-40 shadow-xl rounded-full object-cover h-40 w-40 align-middle border border-4 border-white " data-v-47b4b219=""> -->
 
-            <section class="max-h-[200px] w-10/12 mx-auto" v-if="true">
+            <section class="max-h-[200px] w-10/12 mx-auto z-20" v-if="true">
                 <div
-                    class="relative flex flex-col flex-auto min-w-0 p-4 mx-6 -mt-10 overflow-hidden break-words border-0 shadow-xl dark:shadow-soft-dark-xl dark:bg-gray-950 rounded-2xl bg-white/80 bg-clip-border backdrop-blur-2xl backdrop-saturate-200">
+                    class="relative flex flex-col flex-auto min-w-0 p-4 mx-6 z-40 -mt-10 overflow-hidden break-words border-0 shadow-xl dark:shadow-soft-dark-xl dark:bg-gray-950 rounded-2xl bg-white/80 bg-clip-border backdrop-blur-2xl backdrop-saturate-200">
                     <div class="flex w-7/12 -mx-3">
                         <div class="flex-none w-auto max-w-full px-3">
                             <div
@@ -113,7 +121,7 @@
                 <publication-list class="col-span-2" :Publications="Project.publications" @Deleted="Deleted()" />
             </div>
             <gallery-new :Files="Project.photos" />
-            <team-list-new :UsersConsul="Project.consultant" :UsersMentor="Project.mentor"
+            <team-list-new class="w-[400px]" :UsersConsul="Project.consultant" :UsersMentor="Project.mentor"
                 :UsersMembers="Project.members" />
 
         </div>
@@ -130,14 +138,12 @@ import TeamListNew from '@/components/Explore/Project/Resourse/TeamListNew.vue'
 import PaginationMixin from '@/components/mixins/Pagination'
 import GalleryNew from './Resourse/GalleryNew.vue'
 import Carousel from '../Blocks/Carousel.vue'
-
-
-
+import SwiperMixin from '@/components/mixins/Swiper'
 
 export default {
-    mixins: [PaginationMixin],
+    mixins: [PaginationMixin,SwiperMixin],
     components: {
-        PublicationList, GalleryNew, TeamListNew, ProjectInfo,Carousel
+        PublicationList, GalleryNew, TeamListNew, ProjectInfo, Carousel
 
     },
     async mounted() {
