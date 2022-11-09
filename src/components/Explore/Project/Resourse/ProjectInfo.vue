@@ -1,7 +1,6 @@
 <template>
     <div class=" w-full max-w-full  lg-max:mt-6 ">
-        <div
-            class="relative flex flex-col h-full min-w-0 bg-white border-0  shadow-xl rounded-2xl">
+        <div class="relative flex flex-col h-full min-w-0 bg-white border-0  shadow-xl rounded-2xl">
             <div class="p-4 pb-0 mb-0 border-b-0 rounded-t-2xl">
                 <div class="flex flex-wrap -mx-3">
                     <div class="flex items-center w-full max-w-full px-3 shrink-0 md:w-8/12 md:flex-none">
@@ -24,23 +23,39 @@
                 </div>
             </div>
             <div class="flex-auto p-4">
-                <p class="leading-normal text-sm dark:text-white dark:opacity-60">{{Project.description}}</p>
+
+                <p :class="{ 'max-h-[190px]': !isShow }"
+                    class="overflow-hidden leading-normal text-sm dark:text-white dark:opacity-60">
+                    {{ Project.description }}
+                </p>
+                <div v-if="Project.description?.length > 550" class="text-sm text-pink-500">
+                    <a v-if="!isShow" @click="isShow = !isShow;" class="hover:cursor-pointer ">Показать</a>
+                    <a v-if="isShow" @click="isShow = !isShow;" class="hover:cursor-pointer ">Скрыть</a>
+                </div>
+
                 <hr class="h-px my-6 bg-transparent bg-gradient-to-r from-transparent via-white to-transparent">
                 <ul class="flex flex-col pl-0 mb-0 rounded-lg">
                     <li
                         class="relative block px-4 py-2 pt-0 pl-0 leading-normal border-0 rounded-t-lg text-sm text-inherit">
-                        <strong class="text-slate-700 dark:text-white">Название:</strong> &nbsp; {{Project.name}}</li>
-                    <li v-if="this.Project.members?.length" class="relative flex px-4 py-2 pl-0 leading-normal border-0 border-t-0 text-sm text-inherit">
-                        <strong class="text-slate-700 dark:text-white">Учатсникт:</strong> &nbsp; 
-                        <team-circular class="pl-3" :Users="this.Project.members"/>
+                        <strong class="text-slate-700 dark:text-white">Название:</strong> &nbsp; {{ Project.name }}
                     </li>
-                    <li v-if="this.Project.mentor?.length" class="relative flex px-4 py-2 pl-0 leading-normal border-0 border-t-0 text-sm text-inherit">
-                        <strong class="text-slate-700 dark:text-white">Наставники:</strong> &nbsp; 
-                        <team-circular class="pl-3" :Users="this.Project.mentor"/>
+                    <li v-if="this.Project.members?.length"
+                        class="relative flex px-4 py-2 pl-0 leading-normal border-0 border-t-0 text-sm text-inherit">
+                        <strong class="text-slate-700 dark:text-white">Количество участников проекта:</strong> &nbsp;
+                        {{Project.members?.length + Project.mentor?.length + Project.consultant?.length}}
+                        <!-- <team-circular class="pl-3" :Users="this.Project.members" /> -->
                     </li>
-                    <li v-if="this.Project.consultant?.length" class="relative flex px-4 py-2 pl-0 leading-normal border-0 border-t-0 text-sm text-inherit">
-                        <strong class="text-slate-700 dark:text-white">Консультанты:</strong> &nbsp; 
-                        <team-circular class="pl-3" :Users="this.Project.consultant"/>
+                    <li v-if="this.Project.mentor?.length"
+                        class="relative flex px-4 py-2 pl-0 leading-normal border-0 border-t-0 text-sm text-inherit">
+                        <strong class="text-slate-700 dark:text-white">Количество публикаций:</strong> &nbsp;
+                        {{Project.publications?.length}}
+                        <!-- <team-circular class="pl-3" :Users="this.Project.mentor" /> -->
+                    </li>
+                    <li v-if="this.Project.consultant?.length"
+                        class="relative flex px-4 py-2 pl-0 leading-normal border-0 border-t-0 text-sm text-inherit">
+                        <strong class="text-slate-700 dark:text-white">Галлерея:</strong> &nbsp;
+                        {{Project.photos?.length}}
+                        <!-- <team-circular class="pl-3" :Users="this.Project.consultant" /> -->
                     </li>
                 </ul>
             </div>
@@ -74,11 +89,15 @@
 <script>
 import TeamCircular from '../../Blocks/TeamCircular.vue';
 export default {
-    components:{
-        TeamCircular
+    components: {
     },
-    props:{
-        Project:Object
+    props: {
+        Project: Object
+    },
+    data(){
+        return{
+            isShow:false
+        }
     }
 }
 </script>

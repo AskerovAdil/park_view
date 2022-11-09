@@ -1,5 +1,5 @@
 <template>
-        <div class="mx-auto pb-8 bg-white rounded-lg shadow-lg">
+        <div class="mx-auto pb-8 bg-white rounded-2xl shadow-lg w-full ">
             <div class="p-4 pb-0 mb-0 border-b-0 rounded-t-2xl">
                 <h6 class="mb-0 dark:text-white">Галлерея</h6>
             </div>

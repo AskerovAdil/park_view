@@ -3,38 +3,48 @@
 
     <div class="">
 
-        <section v-if="false"
-            class="h-[500px] overflow-hidden bg-[url(https://images.unsplash.com/photo-1602810319428-019690571b5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover bg-center bg-no-repeat">
-            <div class="max-h-[200px] w-10/12 mx-auto" v-if="true">
-                <div
-                    class="relative flex flex-col flex-auto min-w-0 p-4 mx-6 -mt-10 overflow-hidden break-words border-0 shadow-xl dark:shadow-soft-dark-xl dark:bg-gray-950 rounded-2xl bg-white/80 bg-clip-border backdrop-blur-2xl backdrop-saturate-200">
-                    <div class="flex w-7/12 -mx-3">
-                        <div class="flex-none w-auto max-w-full px-3">
-                            <div
-                                class="text-base ease-soft-in-out h-16 w-16 relative inline-flex items-center justify-center rounded-xl text-white transition-all duration-200">
-                                <img v-if="Project?.photos != undefined" alt="..."
-                                    :src="'https://pp.ftf.tsu.ru/' + Project.photos[(Project.photos.length - 1)].link"
-                                    class="w-full h-full object-cover shadow-sm rounded-xl">
-                                <img v-else src="../../../assets/img/bruce-mars.jpg" alt="profile_image"
-                                    class="w-full h-full object-cover shadow-sm rounded-xl">
+        <div v-if="true">
+            <section class="relative bg-gray-900 text-white rounded-lg shadow-xl">
 
-                            </div>
-                        </div>
-                        <div class="flex-none w-auto max-w-full px-2 ">
-                            <div class="h-full">
-                                <p class=" dark:text-white">{{ Project.name }}</p>
-                                <p
-                                    class="mb-0 max-h-[48px] overflow-hidden font-semibold leading-normal text-sm dark:text-white dark:opacity-60">
-                                    {{ Project.description }}
-                                </p>
-                            </div>
-                        </div>
+                <div class=" mx-auto max-w-screen-2xl px-4 py-48 mb-10 lg:flex shadow-3xl lg:items-center">
+                    <!-- <img v-if="Project?.photos != undefined" class="absolute opacity-30 object-fit  left-0 w-full bottom-0 z-0" :src="'https://pp.ftf.tsu.ru/' + Project.photos[0]?.link" alt=""> -->
+                    <div class="absolute  opacity-20 object-fit left-0 h-full overflow-hidden w-full bottom-0 z-0">
+                        <swiper class="" :modules="modules" :space-between="30" :slides-per-view="1"
+                            :pagination="{ clickable: true }">
+                            <swiper-slide v-for="el in Project.photos" :key="el.id" class="slide">
+                                <div class="">
+                                    <img :src="'https://pp.ftf.tsu.ru/' + el.link"
+                                        class="object-cover w-full h-full z-40" alt="">
+                                </div>
+                            </swiper-slide>
+                        </swiper>
+                    </div>
 
+
+
+                    <div class="z-40 mx-auto max-w-3xl text-center">
+                        <h1
+                            class="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
+                            {{ Project.name }}
+                        </h1>
+
+                        <p class="mx-auto mt-4 max-w-xl h-[100px] overflow-hidden sm:text-xl sm:leading-relaxed">
+                            {{ Project.description }}
+
+                        </p>
+
+                        <div class="mt-8 flex flex-wrap justify-center gap-4">
+                            <a class="block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
+                                href="/get-started">
+                                В команду проекта
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
+
+        </div>
 
         <div v-if="false" class="w-full mb-6 shadow-xl">
             <div class="flex bg-white">
@@ -68,15 +78,16 @@
             </div>
         </div>
 
-        <div v-if="true" class="pb-10">
+        <div v-if="false" class="pb-10">
             <!-- <img v-if="Project?.photos != undefined" :src="'https://pp.ftf.tsu.ru/' + Project.photos[0]?.link"
                 class="w-full object-cover h-[200px] relative flex items-center overflow-hidden rounded-2xl  bg-center p-0" /> -->
-            <carousel  />
+            <carousel />
             <swiper class="swiper mx-auto z-0" :modules="modules" :space-between="30" :slides-per-view="1"
                 :pagination="{ clickable: true }">
                 <swiper-slide v-for="el in Project.photos" :key="el.id" class="slide">
                     <div class="bg-black z-0">
-                        <img :src="'https://pp.ftf.tsu.ru/'+el.link" class="object-cover w-full h-[450px] opacity-70" alt="">
+                        <img :src="'https://pp.ftf.tsu.ru/' + el.link" class="object-cover w-full h-[450px] opacity-70"
+                            alt="">
                     </div>
                 </swiper-slide>
             </swiper>
@@ -118,11 +129,13 @@
         <div class="w-10/12 mx-auto">
             <div class="grid grid-cols-3 gap-4 mb-4">
                 <project-info :Project="Project" />
-                <publication-list class="col-span-2" :Publications="Project.publications" @Deleted="Deleted()" />
+                <team-list-new class="col-span-2" :UsersConsul="Project.consultant" :UsersMentor="Project.mentor"
+                    :UsersMembers="Project.members" />
+                </div>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                <gallery-new class="col-span-1" :Files="Project.photos" />
+                <publication-list class="col-span-1" :Publications="Project.publications" @Deleted="Deleted()" />
             </div>
-            <gallery-new :Files="Project.photos" />
-            <team-list-new class="w-[400px]" :UsersConsul="Project.consultant" :UsersMentor="Project.mentor"
-                :UsersMembers="Project.members" />
 
         </div>
 
@@ -141,7 +154,7 @@ import Carousel from '../Blocks/Carousel.vue'
 import SwiperMixin from '@/components/mixins/Swiper'
 
 export default {
-    mixins: [PaginationMixin,SwiperMixin],
+    mixins: [PaginationMixin, SwiperMixin],
     components: {
         PublicationList, GalleryNew, TeamListNew, ProjectInfo, Carousel
 

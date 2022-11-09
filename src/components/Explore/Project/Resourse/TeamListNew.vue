@@ -5,6 +5,10 @@
             <div class="p-4 pb-0 mb-0 border-b-0 rounded-t-2xl">
                 <h6 class="mb-0 dark:text-white">Команда</h6>
             </div>
+            <div>
+                
+            </div>
+
             <div class="flex-auto p-4">
                 <ul v-for="el in UsersMembers" :key="el.id"
                     class="flex flex-col pl-0 mb-0 rounded-lg">
@@ -18,7 +22,7 @@
                         </div>
                         <div class=" w-9/12  flex flex-col items-start justify-center">
                             <h6 class="mb-0 leading-normal text-sm dark:text-white">{{el.firstName + ' '+el.lastName}}</h6>
-                            <p class="h-8 overflow-hidden mb-0 leading-tight text-xs dark:text-white dark:opacity-60">{{el.email}}</p>
+                            <p class="h-8 overflow-hidden mb-0 leading-tight text-xs dark:text-white dark:opacity-60">{{el.skills}}</p>
                         </div>
                         <a class="inline-block py-3 pl-0 pr-4 mb-0 ml-auto font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in hover:scale-102 hover:active:scale-102 active:opacity-85 text-fuchsia-500 hover:text-fuchsia-800 hover:shadow-none active:scale-100"
                             href="javascript:;">Перейти</a>
@@ -36,7 +40,7 @@
                         </div>
                         <div class=" w-9/12  flex flex-col items-start justify-center">
                             <h6 class="mb-0 leading-normal text-sm dark:text-white">{{el.firstName + ' '+el.lastName}}</h6>
-                            <p class="h-8 overflow-hidden mb-0 leading-tight text-xs dark:text-white dark:opacity-60">{{el.email}}</p>
+                            <p class="h-8 overflow-hidden mb-0 leading-tight text-xs dark:text-white dark:opacity-60">{{el.skills}}</p>
                         </div>
                         <a class="inline-block py-3 pl-0 pr-4 mb-0 ml-auto font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in hover:scale-102 hover:active:scale-102 active:opacity-85 text-fuchsia-500 hover:text-fuchsia-800 hover:shadow-none active:scale-100"
                             href="javascript:;">Перейти</a>
@@ -54,7 +58,7 @@
                         </div>
                         <div class=" w-9/12  flex flex-col items-start justify-center align-center flex">
                             <h6 class="mb-0 leading-normal text-sm dark:text-white">{{el.firstName + ' '+el.lastName}}</h6>
-                            <p class="h-8 overflow-hidden mb-0 leading-tight text-xs dark:text-white dark:opacity-60">{{el.email}}</p>
+                            <p class="h-8 overflow-hidden mb-0 leading-tight text-xs dark:text-white dark:opacity-60">{{el.skills}}</p>
                         </div>
                         <a class="inline-block py-3 pl-0 pr-4 mb-0 ml-auto font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in hover:scale-102 hover:active:scale-102 active:opacity-85 text-fuchsia-500 hover:text-fuchsia-800 hover:shadow-none active:scale-100"
                             href="javascript:;">Перейти</a>
