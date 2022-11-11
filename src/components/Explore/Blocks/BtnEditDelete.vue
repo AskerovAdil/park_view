@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import AlertDelete from '@/components/Resourse/blocks/AlertDelete.vue'
+import AlertDelete from './AlertDelete.vue'
     export default {
 
         components:{

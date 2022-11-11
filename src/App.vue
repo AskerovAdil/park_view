@@ -1,13 +1,13 @@
 <template>
     <div
-        class="m-0 font-sans antialiased font-normal text-left bg-white leading-default text-base dark:bg-slate-950 text-slate-500 dark:text-white/80">
+        class="text-gray-500 m-0 font-sans antialiased font-normal text-left bg-white leading-default text-base dark:bg-slate-950 text-slate-500 dark:text-white/80">
         <div v-if="!isNewDesign" class="w-9/12  mx-auto  top-0 z-110 ">
             <nav
                 class="fixed justify-center w-9/12 rounded-full mx-auto text-center z-30 px-6 py-2  my-4 shadow-xl bg-white/80 backdrop-blur-2xl backdrop-saturate-200 rounded-blur lg:flex-nowrap lg:justify-center">
                 <div
                     class="container flex flex-wrap items-center justify-between lg-max:overflow-hidden lg:flex-nowrap">
-                    <a class="py-2.5 text-sm mr-4 ml-4 whitespace-nowrap font-bold text-slate-700 lg:ml-0"
-                        href="@/pages/dashboards/default.html">Проектный парк ФТФ</a>
+                    <router-link class="py-2.5 text-sm mr-4 ml-4 whitespace-nowrap font-bold text-slate-700 lg:ml-0"
+                        to="/index.html">Проектный парк ФТФ</router-link>
                     <button aria-expanded="false" nav-collapse-trigger=""
                         class="px-3 py-1 ml-2 leading-none bg-transparent rounded-lg shadow-none cursor-pointer lg:hidden text-lg text-slate-700">
                         <span class="inline-block mt-2 align-middle w-6 h-6 bg-none">
@@ -1055,7 +1055,6 @@
                             <li
                                 class="relative mx-2 md-max:static group lg:after:content-[''] lg:after:top-0 lg:hover:after:top-full lg:after:absolute lg:after:left-0 lg:after:-bottom-6 lg:after:w-full lg:after:h-full">
                                 <div v-if="this.LogginUser?.id != null">
-
                                     <router-link :to="'User/Details/' + this.LogginUser?.id"
                                         class="flex shrink-0 items-center text-start">
                                         <img alt="Man"

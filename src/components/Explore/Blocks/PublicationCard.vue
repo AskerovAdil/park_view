@@ -1,95 +1,96 @@
 <template>
-    <div>
-        <a
-            class="relative block bg-white rounded-lg border border-gray-100 p-4 px-6 mb-2"
-        >
-            <div class="absolute right-1 top-1   ">
-                <btn-edit-delete 
-                    :id="Publication?.id"    
-                    :Name="Publication?.name"    
-                    :MethodName="'Publications'"
-                    @Deleted="Deleted()" 
-                />
-            </div>
+    <!-- <details class="group ">
+        <summary class="flex cursor-pointer items-center justify-between rounded-lg bg-gray-50 p-4">
+            <h2 class="font-medium text-gray-900">
+                Как FAQ влияет на SEO?
+
+            </h2>
+
+            <svg class="ml-1.5 h-5 w-5 flex-shrink-0 transition duration-300 group-open:-rotate-180"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </summary>
+
+        <p class="mt-4 px-4 leading-relaxed text-gray-700">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
+            molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
+            voluptate dicta quo officiis explicabo consequuntur distinctio corporis
+            earum similique!
+        </p>
+    </details> -->
 
 
-            <span
-                class="absolute inset-x-0 bottom-0 h-2 rounded-b-lg bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
-            ></span>
 
-            <div class="justify-between sm:flex">
-                <div>
-                    <h5 v-if="Publication?.name!=''" class="text-xl font-bold text-gray-900">
-                        {{Publication?.name}}
-                    </h5>
+    <div class="relative mb-8">
+        <span
+            class="w-6.5 h-6.5 rounded-circle text-base z-1 absolute left-4 inline-flex -translate-x-1/2 items-center justify-center bg-white text-center font-semibold">
+            <img class="w-6 h-6" src="@/assets/img/ForPage/down-arrow.png" />
+        </span>
+        <details class="group ml-12 pt-1.4 max-w-120 relative -top-1.5 w-auto">
+            <summary>
 
-                    <p v-if="Publication?.author != undefined" class="mt-1 text-xs font-medium text-gray-600">{{Publication.author.firstName + ' ' + Publication.author.lastName}}</p>
-                </div>
-
-                <div class="ml-3 hidden flex-shrink-0 sm:block">
-                    <!--<img v-if="Publication.author.photo !=null"
-                        alt="Paul Clapton"
-                        :src="'http://localhost:7030/'+Publication.author.photo"
-                        class="h-16 w-16 rounded-lg object-cover shadow-sm"
-                    />-->
-                    <div class="flex  z-10 -space-x-2">
-                        <li class="flex">
-                            <circle-user
-                                :User="Publication?.author"
-                            ></circle-user>
-                        </li>
+                <h6 class="mb-0 font-semibold leading-normal text-sm text-slate-700">{{ Publication.name }}</h6>
+                <p class="mt-1 mb-0 font-semibold leading-tight text-xs text-slate-400">21 DEC 11 PM</p>
+                <div class="mt-2 flex gap-2">
+                    <div v-for="el in 1" :key="el">
+                    </div>
+                    <div :data-tip='"Скачать"' class="tooltip hover:cursor-pointer">
+                        <img class="border-2 border-blue-200 hover:shadow-md  rounded-lg  w-14 p-2"
+                            src="@/assets/img/ForPage/doc-file.png" />
+                    </div>
+                    <div :data-tip='"Скачать"' class="tooltip hover:cursor-pointer">
+                        <img class="border-2 border-blue-200 hover:shadow-md  rounded-lg  w-14 p-2"
+                            src="@/assets/img/ForPage/new-document.png" />
+                    </div>
+                    <div :data-tip='"Скачать"' class="tooltip hover:cursor-pointer">
+                        <img class="border-2 border-blue-200 hover:shadow-md  rounded-lg  w-14 p-2" src="@/assets/img/ForPage/pdf-file.png" />
                     </div>
                 </div>
-            </div>
-            <p :class="{'max-h-[65px]': !isShow}"
-                class="overflow-hidden  mb-1 text-sm  leading-relaxed text-blueGray-700">
-                {{Publication?.description}}
-            </p>
-            <div v-if="Publication?.description?.length > 145" class="mb-2 font-normal text-pink-500">
-                <a v-if="!isShow" @click="isShow = !isShow;" class="hover:cursor-pointer ">Показать</a>
-                <a v-if="isShow" @click="isShow = !isShow;" class="hover:cursor-pointer ">Скрыть</a>
-            </div>
+            </summary>
+            <p class="mt-2 mb-2 leading-normal text-sm text-slate-500">{{ Publication.description }}</p>
 
-            <!-- <div class="mt-4 sm:pr-8">
-                <p :class="{}" class="text-sm text-gray-500">
-                    {{Publication?.description}}
-                </p>
-            </div> -->
+            <TeamCircular :Users="UsersTEMP" />
 
-            <!-- <dl class="mt-6 flex">
-                <div class="flex flex-col-reverse">
-                <dt class="text-sm font-medium text-gray-600">Опубликовано</dt>
-                <dd class="text-xs text-gray-500">{{Publication?.createdDate}}</dd>
-                </div>
-            </dl> -->
-        </a>
+        </details>
     </div>
 
 </template>
 
 <script>
-import CircleUser from './CircleUser.vue'
-import BtnEditDelete from './BtnEditDelete.vue'
-    export default {
-        data(){
-            return{
-                isShow:false
-            }
-        },
-        components:{
-            CircleUser,BtnEditDelete
-        },
-        props:{
-            Publication:Object
-        },
-        methods:{
-            Deleted(){
-                this.$emit('Deleted')
-            }
+import TeamCircular from './TeamCircular.vue';
+// import CircleUser from './CircleUser.vue'
+// import BtnEditDelete from './BtnEditDelete.vue'
+export default {
+
+    data() {
+        return {
+            isShow: false,
+            UsersTEMP: [
+                { firstName: 'Арман', lastName: 'Царукян', middleName: 'Царукянович', id: 1 },
+                { firstName: 'Арман', lastName: 'Царукян', middleName: 'Царукянович', id: 2 },
+                { firstName: 'Арман', lastName: 'Царукян', middleName: 'Царукянович', id: 2 },
+                { firstName: 'Арман', lastName: 'Царукян', middleName: 'Царукянович', id: 2 },
+            ]
+        }
+    },
+    components: {
+        TeamCircular
+        // CircleUser,BtnEditDelete
+    },
+    props: {
+        Publication: Object
+    },
+    methods: {
+        Deleted() {
+            this.$emit('Deleted')
         }
     }
+}
 </script>
 
-<style lang="scss" scoped>
-
+<style scoped>
+summary::marker {
+    content: "";
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full max-w-full px-3 text-center flex-0">
+    <div v-if="false" class="w-full max-w-full px-3 text-center flex-0">
   <h3 class="mt-12">Build Your Profile</h3>
   <h5 class="font-normal dark:text-white text-slate-400">This information will let us know more about you.</h5>
   <div multisteps-form class="mb-12">
@@ -178,7 +178,7 @@
     </div>
   </div>
 </div>
-    <section v-if="false" class=" py-20 relative overflow-hidden text-white ">
+    <section v-if="true" class=" py-20 relative overflow-hidden text-white ">
         <div class="z-20 max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">    
             <div class="container grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
                     <div class="lg:col-span-2 m-auto">
