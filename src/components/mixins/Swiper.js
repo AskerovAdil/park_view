@@ -10,6 +10,7 @@ export default {
     },
     setup() {
         return {
+            modules: [Navigation]
         }
       }
 }

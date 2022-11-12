@@ -1,6 +1,7 @@
 <template>
+
     <div
-        class="text-gray-500 m-0 font-sans antialiased font-normal text-left bg-white leading-default text-base dark:bg-slate-950 text-slate-500 dark:text-white/80">
+        class="text-gray-500 m-0 font-sans antialiased font-normal text-left bg-white leading-default text-base">
         <div v-if="!isNewDesign" class="w-9/12  mx-auto  top-0 z-110 ">
             <nav
                 class="fixed justify-center w-9/12 rounded-full mx-auto text-center z-30 px-6 py-2  my-4 shadow-xl bg-white/80 backdrop-blur-2xl backdrop-saturate-200 rounded-blur lg:flex-nowrap lg:justify-center">
@@ -76,28 +77,25 @@
                                                                 </svg>
                                                             </div>
                                                         </div>
-                                                        Dashboards
+                                                        Проектный парк 
                                                     </div>
                                                     <router-link to="/Project/Index"
                                                         class="hover:text-slate-700 hover:bg-gray-200 block w-full px-4 py-1.2 clear-both font-normal text-slate-500 text-align-inherit whitespace-nowrap bg-transparent border-0 lg:transition-colors lg:duration-300 lg:ease-soft rounded-lg">
-                                                        <span class="pl-4">Project</span>
+                                                        <span class="pl-4">Проекты</span>
                                                     </router-link>
                                                     <router-link to="/Users/Index"
                                                         class="hover:text-slate-700 hover:bg-gray-200 block w-full px-4 py-1.2 clear-both font-normal text-slate-500 text-align-inherit whitespace-nowrap bg-transparent border-0 lg:transition-colors lg:duration-300 lg:ease-soft rounded-lg">
-                                                        <span class="pl-4">Users</span>
+                                                        <span class="pl-4">Участники</span>
                                                     </router-link>
                                                     <router-link to="/News/Index"
                                                         class="hover:text-slate-700 hover:bg-gray-200 block w-full px-4 py-1.2 clear-both font-normal text-slate-500 text-align-inherit whitespace-nowrap bg-transparent border-0 lg:transition-colors lg:duration-300 lg:ease-soft rounded-lg">
-                                                        <span class="pl-4">News</span>
+                                                        <span class="pl-4">Новости</span>
                                                     </router-link>
                                                     <router-link to="/Publications/Create"
                                                         class="hover:text-slate-700 hover:bg-gray-200 block w-full px-4 py-1.2 clear-both font-normal text-slate-500 text-align-inherit whitespace-nowrap bg-transparent border-0 lg:transition-colors lg:duration-300 lg:ease-soft rounded-lg">
                                                         <span class="pl-4">Добавить публикацию</span>
                                                     </router-link>
-                                                    <a href="@/pages/dashboards/crm.html"
-                                                        class="hover:text-slate-700 hover:bg-gray-200 block w-full px-4 py-1.2 clear-both font-normal text-slate-500 text-align-inherit whitespace-nowrap bg-transparent border-0 lg:transition-colors lg:duration-300 lg:ease-soft rounded-lg">
-                                                        <span class="pl-4">CRM</span>
-                                                    </a>
+                                       
                                                     <div
                                                         class="flex items-center px-0 py-2 mt-4 mb-0 font-bold text-sm whitespace-nowrap text-slate-700 ">
                                                         <div class="inline-block">
@@ -639,10 +637,10 @@
                                     class="shadow-lg sm-max:right-auto md-max:left-0 md-max:right-0 lg-max:bg-transparent lg-max:overflow-scroll lg-max:relative lg-max:shadow-none lg-max:transform-none lg-max:block lg-max:h-0 lg-max:transition-all lg-max:duration-350 lg-max:ease-soft lg-max:pt-0 lg-max:pb-0 lg-max:opacity-0 lg-max:top-0 lg-max:origin-top lg-max:pointer-events-none  static m-0 mt-0 text-left list-none bg-white rounded-2xl lg:mt-4 lg:min-w-160 lg:absolute z-100 text-sm text-slate-500 bg-clip-padding lg:shadow-soft-3xl lg:cursor-pointer lg:transition-all lg:duration-250 lg:block lg:group-focus:pointer-events-auto lg:group-focus:transform-dropdown-show lg:group-focus:opacity-100 lg:group-focus:before:-top-5 lg:group-hover:opacity-100 lg:opacity-0  lg:origin-top lg:group-hover:pointer-events-auto lg:group-hover:transform-dropdown-show lg:pointer-events-none lg:transform-dropdown lg:before:font-awesome lg:before:content-['\f0d8'] lg:before:absolute lg:before:top-0 lg:group-hover:before:-top-4.8  lg:before:left-7 lg:before:right-auto lg:before:text-5.5 lg:before:text-white lg:before:transition-all lg:before:duration-350 lg:before:ease-soft">
                                     <div class="w-full max-w-full ">
                                         <div
-                                            class="relative flex flex-col min-w-0 break-words bg-white border-0 dark:bg-gray-950 dark:shadow-soft-dark-xl shadow-soft-xl rounded-2xl bg-clip-border">
+                                            class="relative flex flex-col min-w-0 break-words bg-white border-0  shadow-soft-xl rounded-2xl bg-clip-border">
                                             <div
                                                 class="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-4 pb-0">
-                                                <h6 class="mb-0 dark:text-white whitespace-nowrap">Ближайшие мероприятия
+                                                <h6 class="mb-0  whitespace-nowrap">Ближайшие мероприятия
                                                 </h6>
 
                                             </div>
@@ -659,7 +657,7 @@
                                                     <div class="ml-4">
                                                         <div class="">
                                                             <h6
-                                                                class="mb-1 leading-normal dark:text-white text-sm text-slate-700">
+                                                                class="mb-1 leading-normal text-sm text-slate-700">
                                                                 Cyber Week</h6>
                                                             <span class="leading-normal text-sm whitespace-nowrap">27
                                                                 March 2020, at 12:30
@@ -678,7 +676,7 @@
                                                     <div class="ml-4">
                                                         <div class="">
                                                             <h6
-                                                                class="mb-1 leading-normal dark:text-white text-sm text-slate-700">
+                                                                class="mb-1 leading-normal  text-sm text-slate-700">
                                                                 Meeting with Marry</h6>
                                                             <span class="leading-normal text-sm">24 March 2021, at 10:00
                                                                 PM</span>
@@ -1070,11 +1068,11 @@
                                         </div>
                                     </router-link>
                                     <div nav-dropdown="authentication"
-                                        class=" lg:group-hover:pointer-events-auto lg:group-hover:opacity-100   static m-0 mt-0 text-left list-none bg-white rounded-xl lg:mt-4 lg:min-w-60 lg:absolute z-100 text-sm text-slate-500 bg-clip-padding  lg:block lg:opacity-0  ">
+                                        class="text-gray-500 lg:group-hover:pointer-events-auto lg:group-hover:opacity-100   static m-0 mt-0 text-left list-none bg-white rounded-xl lg:mt-4 lg:min-w-60 lg:absolute z-100 text-sm text-slate-500 bg-clip-padding  lg:block lg:opacity-0  ">
                                         <ul class="px-4 py-4">
                                             <li nav-nested-menu-trigger="" class="pb-4 ">
                                                 <router-link to="/Login"
-                                                    class="hover:scale-105 block px-2 font-semibold transition-all ease-nav-brand text-sm text-slate-500 dark:text-white">
+                                                    class="hover:scale-105 block px-2 font-semibold transition-all ease-nav-brand text-sm text-slate-500 ">
                                                     <i class="fa fa-route sm:mr-1 pr-1 my-auto" aria-hidden="true"></i>
                                                     <span class="hidden sm:inline">На страницу</span>
                                                 </router-link>
@@ -1082,7 +1080,7 @@
                                             </li>
                                             <li nav-nested-menu-trigger="">
                                                 <a @click="this.Logout()"
-                                                    class=" hover:scale-105 px-2 flex hover:cursor-pointer font-semibold transition-all ease-nav-brand text-sm text-slate-500 dark:text-white">
+                                                    class=" hover:scale-105 px-2 flex hover:cursor-pointer font-semibold transition-all ease-nav-brand text-sm text-slate-500 ">
                                                     <i class="fa fa-user my-auto sm:mr-1 pr-1" aria-hidden="true"></i>
 
                                                     <span class="hidden sm:inline">Выйти</span>
@@ -1189,7 +1187,7 @@
 
                                 <div v-else class="flex">
                                     <router-link to="/Login"
-                                        class="block px-2 py-2 font-semibold transition-all ease-nav-brand text-sm text-slate-500 dark:text-white">
+                                        class="block px-2 py-2 font-semibold transition-all ease-nav-brand text-sm text-slate-500 ">
                                         <i class="fa fa-user sm:mr-1 pr-1" aria-hidden="true"></i>
                                         <span class="hidden sm:inline">Войти</span>
                                     </router-link>
@@ -1319,7 +1317,7 @@
                 </router-link>
             </div>
         </div>
-        <div :onscroll="onScroll" class="text-black bg-slate-100 min-h-screen">
+        <div :onscroll="onScroll" class="text-black bg-slate-100 p-0 min-h-screen">
             <router-view />
         </div>
     </div>

@@ -10,7 +10,6 @@ var pagination = {
         if (localStorage.token) {
             this.LogginUser = JSON.parse(localStorage?.user);
             this.Logged =true;
-            console.log(this.LogginUser)
         }
     },
     methods: {

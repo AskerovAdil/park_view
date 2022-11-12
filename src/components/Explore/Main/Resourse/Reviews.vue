@@ -15,7 +15,9 @@
                         </svg>
                         <p class="h-[200px] overflow-hidden leading-relaxed mb-6">{{ el.description }}</p>
                         <a class="inline-flex items-center">
-                            <img alt="testimonial" src="https://dummyimage.com/107x107"
+                            <img v-if="el.user?.photo" alt="testimonial" :src="'http://pp.ftf.tsu.ru/'+el.user.photo.link"
+                                class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+                            <img v-else alt="testimonial" src="https://dummyimage.com/107x107"
                                 class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
                             <span class="flex-grow flex flex-col pl-4">
                                 <span class="title-font font-medium text-gray-900">{{ el.user?.firstName + ' ' +

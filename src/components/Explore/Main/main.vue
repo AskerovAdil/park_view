@@ -1,6 +1,6 @@
 <template>
     <section class="bg-black shadow-2xl h-[700px] overflow-hidden rounded-b-3xl">
-        <img class="hbg-cover bg-center bg-no-repeat rounded-b-3xl overflow-hidden" src="@/assets/img/main.png" alt="">
+        <img class="w-full bg-cover bg-center bg-no-repeat  rounded-b-3xl overflow-hidden" src="@/assets/img/main.png" alt="">
         <div class="absolute  top-20 p-8 md:p-12 lg:px-16 lg:py-24">
             <div class="max-w-lg text-center sm:text-left">
                 <h2 class="text-2xl font-bold text-white sm:text-3xl md:text-5xl">
@@ -14,7 +14,7 @@
                 </p>
 
                 <div class="mt-4 sm:mt-8">
-                    <a href="#"
+                    <router-link :to="LogginUser.token ? '/Create/Project' : '/Login'"
                         class="inline-flex items-center rounded-full bg-indigo-700 px-8 py-3 text-white shadow-lg transition hover:bg-indigo-600 focus:outline-none focus:ring">
                         <span class="text-sm font-medium"> Создать проект </span>
 
@@ -23,7 +23,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
-                    </a>
+                    </router-link>
+
                 </div>
             </div>
 

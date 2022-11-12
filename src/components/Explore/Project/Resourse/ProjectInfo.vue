@@ -4,11 +4,11 @@
             <div class="p-4 pb-0 mb-0 border-b-0 rounded-t-2xl">
                 <div class="flex flex-wrap -mx-3">
                     <div class="flex items-center w-full max-w-full px-3 shrink-0 md:w-8/12 md:flex-none">
-                        <h6 class="mb-0 dark:text-white">Информация о проекте</h6>
+                        <h6 class="mb-0 ">Информация о проекте</h6>
                     </div>
                     <div class="w-full max-w-full px-3 text-right shrink-0 md:w-4/12 md:flex-none">
                         <a href="javascript:;" data-target="tooltip_trigger">
-                            <i class="leading-normal fas fa-user-edit text-sm text-slate-400 dark:text-white dark:opacity-80"
+                            <i class="leading-normal fas fa-user-edit text-sm text-slate-400"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="px-2 py-1 text-center text-white bg-black rounded-lg text-sm hidden" id="tooltip"
@@ -25,7 +25,7 @@
             <div class="flex-auto p-4">
 
                 <p :class="{ 'max-h-[190px]': !isShow }"
-                    class="overflow-hidden leading-normal text-sm dark:text-white dark:opacity-60">
+                    class="overflow-hidden leading-normal text-sm ">
                     {{ Project.description }}
                 </p>
                 <div v-if="Project.description?.length > 550" class="text-sm text-pink-500">
@@ -37,23 +37,23 @@
                 <ul class="flex flex-col pl-0 mb-0 rounded-lg">
                     <li
                         class="relative block px-4 py-2 pt-0 pl-0 leading-normal border-0 rounded-t-lg text-sm text-inherit">
-                        <strong class="text-slate-700 dark:text-white">Название:</strong> &nbsp; {{ Project.name }}
+                        <strong class="text-slate-700 ">Название:</strong> &nbsp; {{ Project.name }}
                     </li>
                     <li v-if="this.Project.members?.length"
                         class="relative flex px-4 py-2 pl-0 leading-normal border-0 border-t-0 text-sm text-inherit">
-                        <strong class="text-slate-700 dark:text-white">Количество участников проекта:</strong> &nbsp;
+                        <strong class="text-slate-700 ">Количество участников проекта:</strong> &nbsp;
                         {{Project.members?.length + Project.mentor?.length + Project.consultant?.length}}
                         <!-- <team-circular class="pl-3" :Users="this.Project.members" /> -->
                     </li>
                     <li v-if="this.Project.mentor?.length"
                         class="relative flex px-4 py-2 pl-0 leading-normal border-0 border-t-0 text-sm text-inherit">
-                        <strong class="text-slate-700 dark:text-white">Количество публикаций:</strong> &nbsp;
+                        <strong class="text-slate-700 ">Количество публикаций:</strong> &nbsp;
                         {{Project.publications?.length}}
                         <!-- <team-circular class="pl-3" :Users="this.Project.mentor" /> -->
                     </li>
                     <li v-if="this.Project.consultant?.length"
                         class="relative flex px-4 py-2 pl-0 leading-normal border-0 border-t-0 text-sm text-inherit">
-                        <strong class="text-slate-700 dark:text-white">Галлерея:</strong> &nbsp;
+                        <strong class="text-slate-700 ">Галлерея:</strong> &nbsp;
                         {{Project.photos?.length}}
                         <!-- <team-circular class="pl-3" :Users="this.Project.consultant" /> -->
                     </li>

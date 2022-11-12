@@ -18,7 +18,7 @@
 
         <section class="max-h-[200px] w-10/12 mx-auto mb-10" v-if="true">
             <div
-                class="relative flex flex-col flex-auto min-w-0 p-4 mx-6 -mt-16 overflow-hidden break-words border-0 shadow-xl dark:shadow-soft-dark-xl dark:bg-gray-950 rounded-2xl bg-white/80 bg-clip-border backdrop-blur-2xl backdrop-saturate-200">
+                class="relative flex flex-col flex-auto min-w-0 p-4 mx-6 -mt-16 overflow-hidden break-words border-0 shadow-xl rounded-2xl bg-white/80 bg-clip-border backdrop-blur-2xl backdrop-saturate-200">
                 <div class="flex flex-wrap justify-between -mx-3">
                     <div class="flex">
                         <div class="w-auto max-w-full px-3">
@@ -26,18 +26,18 @@
                                 class="text-base ease-soft-in-out h-16 w-16 relative inline-flex items-center justify-center rounded-xl text-white transition-all duration-200">
                                 <img v-if="User?.photo != undefined" alt="..."
                                     :src="'https://pp.ftf.tsu.ru/' + User.photo?.link"
-                                    class="w-full shadow-soft-sm rounded-xl">
+                                    class="w-full h-full object-cover  shadow-md rounded-xl">
                                 <img v-else src="../../../assets/img/bruce-mars.jpg" alt="profile_image"
-                                    class="w-full shadow-soft-sm rounded-xl">
+                                    class="w-full shadow-sm rounded-xl">
     
                             </div>
                         </div>
                         <div class="flex-none w-auto max-w-full px-3 my-auto">
                             <div class="h-full">
-                                <h5 class="mb-1 dark:text-white">{{ User.firstName + ' ' + User.lastName + ' ' +
+                                <h5 class="mb-1 ">{{ User.firstName + ' ' + User.lastName + ' ' +
                                         User.middleName
                                 }}</h5>
-                                <p class="mb-0 font-semibold leading-normal text-sm dark:text-white dark:opacity-60">
+                                <p class="mb-0 font-semibold leading-normal text-sm  ">
                                     {{ User.role?.name }}</p>
                             </div>
                         </div>

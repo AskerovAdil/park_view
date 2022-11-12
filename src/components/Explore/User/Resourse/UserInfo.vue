@@ -5,11 +5,11 @@
             <div class="p-4 pb-0 mb-0 border-b-0 rounded-t-2xl">
                 <div class="flex flex-wrap -mx-3">
                     <div class="flex items-center w-full max-w-full px-3 shrink-0 md:w-8/12 md:flex-none">
-                        <h6 class="mb-0 dark:text-white">Profile Information</h6>
+                        <h6 class="mb-0 ">Profile Information</h6>
                     </div>
                     <div class="w-full max-w-full px-3 text-right shrink-0 md:w-4/12 md:flex-none">
                         <a href="javascript:;" data-target="tooltip_trigger">
-                            <i class="leading-normal fas fa-user-edit text-sm text-slate-400 dark:text-white dark:opacity-80"
+                            <i class="leading-normal fas fa-user-edit text-sm text-slate-400 "
                                 aria-hidden="true"></i>
                         </a>
                         <div class="px-2 py-1 text-center text-white bg-black rounded-lg text-sm hidden" id="tooltip"
@@ -24,20 +24,20 @@
                 </div>
             </div>
             <div class="flex-auto p-4">
-                <p class="leading-normal text-sm dark:text-white dark:opacity-60">{{User.skills}}</p>
+                <p class="leading-normal text-sm  ">{{User.skills}}</p>
                 <hr class="h-px my-6 bg-transparent bg-gradient-to-r from-transparent via-white to-transparent">
                 <ul class="flex flex-col pl-0 mb-0 rounded-lg">
                     <li
                         class="relative block px-4 py-2 pt-0 pl-0 leading-normal border-0 rounded-t-lg text-sm text-inherit">
-                        <strong class="text-slate-700 dark:text-white">Full Name:</strong> &nbsp; {{User.firstName + ' ' + User.lastName + ' ' + User.middleName}}</li>
+                        <strong class="text-slate-700 ">Full Name:</strong> &nbsp; {{User.firstName + ' ' + User.lastName + ' ' + User.middleName}}</li>
                     <li class="relative block px-4 py-2 pl-0 leading-normal border-0 border-t-0 text-sm text-inherit">
-                        <strong class="text-slate-700 dark:text-white">Mobile:</strong> &nbsp; {{User.phoneNumber}}</li>
+                        <strong class="text-slate-700 ">Mobile:</strong> &nbsp; {{User.phoneNumber}}</li>
                     <li class="relative block px-4 py-2 pl-0 leading-normal border-0 border-t-0 text-sm text-inherit">
-                        <strong class="text-slate-700 dark:text-white">Email:</strong> &nbsp; {{User.email}}</li>
+                        <strong class="text-slate-700 ">Email:</strong> &nbsp; {{User.email}}</li>
                     <li class="relative block px-4 py-2 pl-0 leading-normal border-0 border-t-0 text-sm text-inherit">
-                        <strong class="text-slate-700 dark:text-white">Course:</strong> &nbsp; {{User.course}}</li>
+                        <strong class="text-slate-700 ">Course:</strong> &nbsp; {{User.course}}</li>
                     <li class="relative block px-4 py-2 pb-0 pl-0 border-0 border-t-0 rounded-b-lg text-inherit">
-                        <strong class="leading-normal text-sm text-slate-700 dark:text-white">Social:</strong> &nbsp;
+                        <strong class="leading-normal text-sm text-slate-700 ">Social:</strong> &nbsp;
                         <a class="inline-block py-0 pl-1 pr-2 mb-0 font-bold text-center text-blue-800 align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-none"
                             href="javascript:;">
                             <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>

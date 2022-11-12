@@ -5,6 +5,7 @@ import Multiselect from '@vueform/multiselect'
 import router from './router/newroute'
 import RolesMixin from './components/mixins/Roles'
 //createApp(App).mount('#app')
+import './assets/css/app.css'
 
 const app = createApp(App)
 app.mixin(RolesMixin)

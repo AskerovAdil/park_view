@@ -23,13 +23,13 @@
 
 
     <div class="relative mb-8">
-        <span
-            class="w-6.5 h-6.5 rounded-circle text-base z-1 absolute left-4 inline-flex -translate-x-1/2 items-center justify-center bg-white text-center font-semibold">
-            <img class="w-6 h-6" src="@/assets/img/ForPage/down-arrow.png" />
-        </span>
+
         <details class="group ml-12 pt-1.4 max-w-120 relative -top-1.5 w-auto">
             <summary>
-
+                <span
+                    class="w-6.5 h-6.5 rounded-circle text-base z-1 absolute -left-8 inline-flex -translate-x-1/2 items-center justify-center bg-white text-center font-semibold">
+                    <img class="w-6 h-6" src="@/assets/img/ForPage/down-arrow.png" />
+                </span>
                 <h6 class="mb-0 font-semibold leading-normal text-sm text-slate-700">{{ Publication.name }}</h6>
                 <p class="mt-1 mb-0 font-semibold leading-tight text-xs text-slate-400">21 DEC 11 PM</p>
                 <div class="mt-2 flex gap-2">
@@ -44,7 +44,8 @@
                             src="@/assets/img/ForPage/new-document.png" />
                     </div>
                     <div :data-tip='"Скачать"' class="tooltip hover:cursor-pointer">
-                        <img class="border-2 border-blue-200 hover:shadow-md  rounded-lg  w-14 p-2" src="@/assets/img/ForPage/pdf-file.png" />
+                        <img class="border-2 border-blue-200 hover:shadow-md  rounded-lg  w-14 p-2"
+                            src="@/assets/img/ForPage/pdf-file.png" />
                     </div>
                 </div>
             </summary>

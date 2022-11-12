@@ -21,7 +21,7 @@
 
 
 
-        <div class="container mx-auto my-5 space-y-4 pb-20">
+        <div class="container mx-auto py-5 space-y-4 pb-20">
             <div class="grid grid-cols-3 mx-auto gap-4">
                 <div v-for="el in ListProject" :key="el.Id"
                         v-show="el.name?.toLowerCase().includes(SearchProject?.toLowerCase() 

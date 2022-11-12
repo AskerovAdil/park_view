@@ -11,10 +11,10 @@
                     <div class="absolute  opacity-20 object-fit left-0 h-full overflow-hidden w-full bottom-0 z-0">
                         <swiper class="" :modules="modules" :space-between="30" :slides-per-view="1"
                             :pagination="{ clickable: true }">
-                            <swiper-slide v-for="el in Project.photos" :key="el.id" class="slide">
-                                <div class="">
+                            <swiper-slide v-for="el in Project.photos" :key="el.id" class="slide h-full">
+                                <div class="h-full">
                                     <img :src="'https://pp.ftf.tsu.ru/' + el.link"
-                                        class="object-cover w-full h-full z-40" alt="">
+                                        class="object-fit w-full h-full z-40" alt="">
                                 </div>
                             </swiper-slide>
                         </swiper>
@@ -112,9 +112,9 @@
                         </div>
                         <div class="flex-none w-auto max-w-full px-2 ">
                             <div class="h-full">
-                                <p class=" dark:text-white">{{ Project.name }}</p>
+                                <p class=" ">{{ Project.name }}</p>
                                 <p
-                                    class="mb-0 max-h-[48px] overflow-hidden font-semibold leading-normal text-sm dark:text-white dark:opacity-60">
+                                    class="mb-0 max-h-[48px] overflow-hidden font-semibold leading-normal text-sm  dark:opacity-60">
                                     {{ Project.description }}
                                 </p>
                             </div>
@@ -126,14 +126,14 @@
         </div>
 
 
-        <div class="w-10/12 mx-auto">
+        <div class="w-10/12 mx-auto pb-10">
             <div class="grid grid-cols-3 gap-4 mb-4">
                 <project-info :Project="Project" />
                 <team-list-new class="col-span-2" :UsersConsul="Project.consultant" :UsersMentor="Project.mentor"
                     :UsersMembers="Project.members" />
                 </div>
                 <div class="grid grid-cols-2 gap-4 mb-4">
-                <gallery-new class="col-span-1" :Files="Project.photos" />
+                <gallery-new v-if="Project.photos" class="col-span-1" :Files="Project.photos" />
                 <publication-list class="col-span-1" :Publications="Project.publications" @Deleted="Deleted()" />
             </div>
 
